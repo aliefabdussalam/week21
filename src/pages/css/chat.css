@@ -1,0 +1,25 @@
+.receiver{
+    margin-left: 100px;
+}
+.btnuser{
+    text-decoration: none;
+}
+.home{
+    height: 100vh;
+}
+table{
+    width: 100%;
+}
+.telegram{
+    color: #7E98DF;
+}
+.list{
+    vertical-align: top !important;
+}
+.navbarchat{
+    height: 60px;
+    align-items: center;
+}
+.nullmsg{
+    text-align: center;
+}
