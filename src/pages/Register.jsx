@@ -17,20 +17,20 @@ const Register = () =>{
         })
     }
     const history = useHistory()
+    const [errMsg, setErr] = useState()
     const handleSubmit = (e) => {
         e.preventDefault() 
-        if(user.username === null){
-            alert("silahkan isi username")
-        }else{
-            INSERT(user)
-            .then((response) => {
-                history.push('/')
-                alert("registrasi berhasil silahkan login terlebih dahulu")
-                
-            }).catch((err) => {
-                console.log(err)
+        if(user.numberPhone==="" || user.password === ""){
+            setErr("nomor telepon atau password tidak boleh kosong")
+          } else if (user.username==="") {
+            setErr("username tidak boleh kosong")
+          }  else {
+            INSERT(user).then(() =>{
+              history.push(`/`);
+            }).catch((err) =>{
+              setErr(err.response.data.error)
             })
-        } 
+          }
     }
     return(
         <div class="container-fluid col-12 body">
@@ -44,7 +44,7 @@ const Register = () =>{
               
               <h5 class="text-left mb-4">Let's create your account</h5>
                     <form onSubmit={handleSubmit} class="Register-form">
-                        <a class="formtext">Nomor Telepon :</a>
+                        <p class="formtext">Nomor Telepon :</p>
                   <div class="form-group">
                       <input 
                       type="text" 
@@ -56,7 +56,7 @@ const Register = () =>{
                       required />
                   </div>
                   <div class="form-group mt-3">
-                  <a class="formtext">Username :</a>
+                  <p class="formtext">Username :</p>
                       <input 
                       type="text" 
                       class="form-control border-0 border-bottom rounded-left"
@@ -67,7 +67,7 @@ const Register = () =>{
                       required />
                   </div>
             <div class="form-group mt-3">
-                <a class="formtext">Password :</a>
+                <p class="formtext">Password :</p>
               <input 
               type="password" 
               name="password"
@@ -77,7 +77,7 @@ const Register = () =>{
               placeholder="Password" 
               required />
             </div>
-                
+            <p style={{color:'red'}}>{errMsg}</p> 
     
             <div class="d-grid gap-2 mt-3">
                 <button class="btnl " type="button" onClick={handleSubmit}>Register</button>

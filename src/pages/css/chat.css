@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 .receiver{
     margin-left: 100px;
 }
@@ -6,12 +11,47 @@
 }
 .home{
     height: 100vh;
+    font-family: Rubik;
+    padding-right: 0rem !important;
 }
 table{
     width: 100%;
 }
+.searchbox{
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .list .searchbox .box{
+    align-items: center;
+    padding-left: 15px;
+    margin-right: 15px;
+    height: 55px;
+    background-color: #f7f5f5;
+    border-radius: 15px;
+  }
+  .list .searchbox .box .src{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    color: #848484;
+  }
+  .list .searchbox .box input{
+    width: 80%;
+    border: none;
+    background-color: transparent;
+  }
+  .list .searchbox .plus{
+    width: 30px;
+    height: 30px;
+    color: #7E98DF;
+  }
 .telegram{
     color: #7E98DF;
+    font-size: 29px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 30px;
 }
 .list{
     vertical-align: top !important;
@@ -22,4 +62,179 @@ table{
 }
 .nullmsg{
     text-align: center;
+}
+.listuser{
+    margin-top: 20px;
+}
+.listuser img{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 10px;
+    /* border: 1px solid green; */
+    object-fit: cover;
+    position: relative;
+}
+.listuser p{
+    font-weight: 500;
+}
+.sendbox{
+    height: 60px;
+    padding: 0 5%;
+  }
+  .sendbox .send{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-radius: 15px;
+    padding: 0 10px;
+    background-color: #f7f5f5;
+  }
+  .sendbox .send form{
+    width: 90%;
+  }
+  .sendbox .send form input{
+    height: 60px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding-left: 20px;
+  }
+  .sendbox .send .rowbox{
+    display: flex;
+    justify-content: center;
+    width: 10%;
+  }
+  .sendbox .send .rowbox .imgbox{
+    width: 31%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sendbox .send .rowbox .imgbox img{
+    width: 23px;
+    height: 23px;
+  }
+  .sendbox .send .rowbox .imgbox .round{
+    position: absolute;
+    width: 11px;
+    height: 11px;
+  }
+  .chatbox {
+    -ms-overflow-style: none;
+    height: 80vh;
+    width: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding: 10px 5% 0 5%;
+  }
+  .chatlist{
+    margin: 10px 0;
+  }
+  .chatlist{
+    align-items: center;
+  }
+  .chatlist .text{
+    padding: 5px 30px;
+  }
+  .chatlist .text p{
+    font-family: Rubik;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    color: white;
+  }
+  .usernow{
+    position: absolute;
+    top: 20px;
+    left: 400px
+  }
+  .dropmenu{
+    width: 200px;
+    height: 250px;
+    padding: 20px 10px;
+    border-radius: 35px 10px 35px 35px;
+    background-color: #7E98DF;
+  }
+  .dropitem{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  .dropitem .imgbox{
+    width: 30%;
+    display: flex;
+    align-items: center;
+  }
+  .dropitem .imgbox img{
+    width: 22px;
+    height: 22px;
+  }
+  .dropitem p{
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    width: 70%;
+    color: white;
+  }
+  .sideBarProfile{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.fs20{
+    font-size: 20px;
+}
+.iconLeft{
+    width: 10%
+}
+.profileUpdate{
+    width: 90%;
+}
+.profilePictureUpdate{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    /* background-color: aqua; */
+    border-radius: 25px;
+    object-fit: cover;
+    position: relative;
+}
+.profilePictureUpdate img{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.inputBoxUpdate{
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+.inputBoxTextArea{
+    resize: none;
+    width: 200px;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.btnSave{
+    background-color: #7E98DF !important;
+}
+.iconLeft{
+    width: 20px;
+    height: 20px;
+    color: #7E98DF;
+    cursor: pointer;
+    /* padding-left: 20px; */
 }

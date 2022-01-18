@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <h2>Telegram</h2>
 
-## Available Scripts
+<h3 align="center">Telegram Web App</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    <a href="">View Demo</a>
+    ·
+    <a href="">Report Bug</a>
+    ·
+    <a href="">Request Feature</a>
+  </p>
+</div>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#getting-started">Prerequisites</a></li>
+        <li><a href="#getting-started">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Screenshot</a></li>
+  </ol>
+</details>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- ABOUT THE PROJECT -->
+<div id="#about-the-project"></div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## About The Project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Product Name Screen Shot](img/prev-chat.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Telegram is a web app that users can create their personal account, send for messages. this app built with React.js, Redux. The server side was created with Node.js and Express.js.
 
-### `npm run eject`
+This link to backend [telegram](https://github.com/aliefabdussalam)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<div id="#built-with"></div>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Built With
 
-## Learn More
+* [React.js](https://reactjs.org/)
+* [Reactstrap](https://reactstrap.github.io/)
+* [React-Router-Dom](https://reactrouter.com/web/guides/quick-start)
+* [redux](https://redux.js.org/)
+* [socket.io-client](https://github.com/socketio/socket.io-client#readme)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- GETTING STARTED -->
+<div id="#getting-started"></div>
 
-### Analyzing the Bundle Size
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Prerequisites
 
-### Making a Progressive Web App
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Installation
 
-### Advanced Configuration
+1. Clone the repo backend
+    ```sh
+    git clone https://github.com/roufurrohim/zwallet-BE
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. Clone the repo frontend
+   ```sh
+   git clone https://github.com/roufurrohim/telegram-fe
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start project
+   ```sh
+   npm start
+   ```
 
-### Deployment
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<div id="#roadmap"></div>
 
-### `npm run build` fails to minify
+<!-- ROADMAP -->
+## Roadmap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Git clone repository frontend and backend
+- [ ] npm install
+- [ ] Register
+- [ ] Option contact
+- [ ] Chat
+- [ ] View Profile contact
+- [ ] View profile
+- [ ] Edit Profile
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<div id="#screenshot"></div>
+
+## Screenshot
+
+<!-- Below is a sample screenshot of the App Coffee Shop website and mobile display for users.
+
+---------------------------------------------------
+Display Web|Display Web
+:-----------------------:|:----------------------------:
+![](img/login.png) | ![](img/reg.png)
+![](img/prev-chat.png) | ![](img/chat.png)
+![](img/profile.png) | ![](img/profile-friend.png)
+
+---------------------------------------------------
+Display Mobile|Display Mobile
+:-----------------------:|:----------------------------:
+![](img/mobile%20(1).png) | ![](img/mobile%20(2).png)
+![](img/mobile%20(3).png) | ![](img/mobile%20(4).png)
+![](img/mobile%20(5).png) | ![](img/mobile%20(6).png) -->
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
