@@ -87,12 +87,12 @@ This link to backend [telegram](https://github.com/aliefabdussalam)
 
 1. Clone the repo backend
     ```sh
-    git clone https://github.com/roufurrohim/zwallet-BE
+    git clone https://github.com/aliefabdussalam/backendweek21
     ```
 
 2. Clone the repo frontend
    ```sh
-   git clone https://github.com/roufurrohim/telegram-fe
+   git clone https://github.com/aliefabdussalam/week21
    ```
 3. Install NPM packages
    ```sh
