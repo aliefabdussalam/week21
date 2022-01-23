@@ -76,6 +76,20 @@ table{
     object-fit: cover;
     position: relative;
 }
+.listusermobile img{
+  width: 80px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 125px;
+  /* border: 1px solid green; */
+  object-fit: cover;
+  
+}
+.usernowmobile{
+  margin-left: 160px;
+}
 .listuser p{
     font-weight: 500;
 }
@@ -152,6 +166,7 @@ table{
     top: 20px;
     left: 400px
   }
+ 
   .dropmenu{
     width: 200px;
     height: 250px;

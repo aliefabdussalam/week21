@@ -30,7 +30,12 @@ const Chat = () =>{
     const userlogin = useSelector((state) => state.user.details[0]);
     const [receiver, setReceiver] = useState('')
     const [msg, setmessage] = useState('') 
-    const [search, setSearch] = useState();  
+    const [search, setSearch] = useState();
+    const [chatOpen, setChatOpen] = useState(false);
+   
+    const toggleChat = () => setChatOpen((prevState) => !prevState);
+    const closeChat = () => setChatOpen(false)
+       
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggleDrop = () => setDropdownOpen(prevState => !prevState);
     const [form, setForm] = useState({
@@ -87,6 +92,8 @@ const Chat = () =>{
         socket.on("history-message", (payload) => {
             setlistmsghistory(payload)
         })
+        toggleChat()
+       
     }
     const handlesendmsg = (e) =>{
         e.preventDefault()
@@ -151,8 +158,8 @@ const Chat = () =>{
         <Loading />
     ):(
         <div class="container-fluid home">
-            <div class="d-flex navbarchat col-12">
-                <div><p class="telegram col-4 mt-2 me-lg-5"> Telegram </p></div>
+            <div class="d-flex navbarchat col-12 ">
+                <div><p class="telegram col-4 mt-2 me-5 "> Telegram </p></div>
                 <Dropdown isOpen={dropdownOpen} toggle={toggleDrop} className="ms-lg-5">
                 <DropdownToggle style={{backgroundColor:'transparent', padding:'0', border:'none'}}>
                   <HiMenuAlt1 style={{width:'30px', height:'40px', color:'#7E98DF'}}/>
@@ -182,7 +189,7 @@ const Chat = () =>{
               </Dropdown>
               <div>
                                         {SidebarOpen === true ? (
-                                            <form className="sideBarProfile vh-100 bg-white w-25" onSubmit={handleSubmit}>
+                                            <form className="sideBarProfile vh-100 bg-white w-lg-25 w-sm-100" onSubmit={handleSubmit}>
                                                 <div className="d-flex mt-4 mb-4 w-100 align-items-center">
                                                     <div className="iconLeft d-flex justify-content-center center fs20 ">
                                                         <FaAngleLeft clasName="text-danger" onClick={closeSidebar} />
@@ -236,7 +243,7 @@ const Chat = () =>{
                            listUser.map((e, i) =>{ 
                                if(e.username === receiver){
                                    return(
-                                       <div className="listuser ms-5 mt-1">
+                                       <div className="listuser ms-5 mt-1 d-none d-lg-block">
                                     <img src={"http://localhost:8800/"+e.image} alt="" srcset="" />
                                     <div className="d-flex flex-column">
                                       <p style={{marginBottom:'0px'}} className="usernow">{e.username}</p>
@@ -252,8 +259,8 @@ const Chat = () =>{
             </div>
             
             <table >
-                <tr>
-                    <td style={{width: '25%'}} class="list">
+                <tr className="d-none d-sm-block">
+                    <td style={{width: '25%'}} className="list">
                     <div className="searchbox" style={{display:'flex', width:'100%'}}>
                         <div className="box" style={{display:'flex', width:'80%'}}>
                             <BiSearch className="src"/>
@@ -261,6 +268,7 @@ const Chat = () =>{
                         </div>
                         <AiOutlinePlus className="plus" onClick={handleSearch}/>
                     </div>
+                    <div>
                        {listUser.length <= 0 ? (
                            <div>
                                user not found
@@ -282,10 +290,12 @@ const Chat = () =>{
                                }
                            })
                        )}
+                    </div>
                     </td>
+                   
                     <td style={{width: "75%", backgroundColor:" #f0efef"}}> 
                         <div style={{height: "80vh", }}>
-                        <div className="chatbox">
+                        <div className="chatbox ">
                             {
                                 listmsghistory.map((e, i) => {
                                     if(e.receiver === receiver || e.sender === receiver) {
@@ -351,6 +361,123 @@ const Chat = () =>{
                                 </div>
                             </div>
                         </div>
+                    
+                    </td>
+                </tr>
+                <tr>
+                <td style={{width: "75%", backgroundColor:" #f0efef"}} className={chatOpen === true ? "d-lg-none" : "d-none"}> 
+                      <div style={{height: "60vh", }}>
+                      <div>
+                      {(
+                           listUser.map((e, i) =>{ 
+                               if(e.username === receiver){
+                                   return(
+                                <div className="listusermobile ps-2 mt-0 bg-white row">
+                                 <div className="iconLeft mt-3 fs20 ">
+                                    <FaAngleLeft clasName="text-danger me-5" onClick={closeChat} />
+                                  </div>
+                                    <img src={"http://localhost:8800/"+e.image} alt="" srcset=""/>
+                                    <p className="usernowmobile">{e.username}</p>                                    
+                                </div>
+                                     
+                                   )
+                               }
+                           })
+                       )}
+                      </div>
+                      <div className="chatbox ">
+                          {
+                              listmsghistory.map((e, i) => {
+                                  if(e.receiver === receiver || e.sender === receiver) {
+                                      return (
+                                          <div key={i}>
+                                              {e.sender === receiver ?
+                                              (
+                                                <div className="chatlist" style={{width:'100%', display:'flex', justifyContent:'flex-end', alignItems:'flex-start'}}>
+                                                  <div className="text" style={{ width:"auto", backgroundColor:'skyblue', borderRadius:"35px 10px 35px 35px", display:"flex", alignItems:"center", justifyContent:"flex-end"}} >
+                                                    <p style={{margin:'0', cursor:'pointer'}}>{e.message}</p>
+                                                     </div>     
+                                                </div>):
+                                              (
+                                                <div className="chatlist" style={{width:'100%', display:'flex', justifyContent:'flex-start', alignItems:'flex-end'}}>
+                                                  <div className="text" style={{ width:"auto", backgroundColor:'#7E98DF', borderRadius:"35px 35px 35px 10px", display:"flex", alignItems:"center", justifyContent:"flex-start"}}>
+                                                    <p style={{margin:'0'}}>{e.message}</p>
+                                                  </div>
+                                                </div>)}
+                                          </div>
+                                      );         
+                                  }    
+                                      
+                              })
+                     }
+                      {
+                              listmsg.map((e, i) => {
+                                  if(e.receiver === receiver || e.sender === receiver) {
+                                      return (
+                                          <div key={i}>
+                                              {e.sender === receiver ?
+                                              (
+                                                <div className="chatlist" style={{width:'100%', display:'flex', justifyContent:'flex-end', alignItems:'flex-start'}}>
+                                                  <div className="text" style={{ width:"auto", backgroundColor:'skyblue', borderRadius:"35px 10px 35px 35px", display:"flex", alignItems:"center", justifyContent:"flex-end"}} >
+                                                    <p style={{margin:'0'}}>{e.msg}</p>
+                                                     </div>
+                                                </div>):
+                                              (
+                                                <div className="chatlist" style={{width:'100%', display:'flex', justifyContent:'flex-start', alignItems:'flex-end'}}>
+                                                  <div className="text" style={{ width:"auto", backgroundColor:'#7E98DF', borderRadius:"35px 35px 35px 10px", display:"flex", alignItems:"center", justifyContent:"flex-start"}}>
+                                                    <p style={{margin:'0'}}>{e.msg}</p>
+                                                  </div>
+                                                </div>)}
+                                          </div>
+                                      );     
+                                  }    
+                                         
+                              })
+                     }
+                     </div>
+                      </div>
+                      <div>
+                          <div className='sendbox'>
+                              <div className="send">
+                                <form onSubmit={handlesendmsg}>
+                                  <input type="text"
+                                  value={msg}
+                                  placeholder="Type your message..."
+                                  onChange={(e) =>setmessage(e.target.value)}/>
+                                </form>
+                                <div className='rowbox'>
+                                  <RiSendPlaneFill onClick={handlesendmsg} style={{color:'#7E98DF', fontSize:'40px', cursor:'pointer'}}/>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  
+                  </td>
+                  <td style={{width: '25%'}} class="list" className={chatOpen === false ? "d-lg-none " : "d-none"}>
+                    
+                    <div>
+                       {listUser.length <= 0 ? (
+                           <div>
+                               user not found
+                           </div>
+                       ) : (
+                           listUser.map((e, i) =>{ 
+                               if(e.username !== user[0].username){
+                                   return(
+                                    <div onClick={() => changeReceiver(e.username)} className="listuser" key={i} style={{cursor:'pointer',display:'flex'}}>
+                                    <img src={"http://localhost:8800/"+e.image} alt="" srcset="" />
+                                    <div className="d-flex flex-column">
+                                    <p style={{marginBottom:'5px'}} >{e.username}
+                                    {/* {userOn.includes(`${e.id}`)?<FaCircle style={{color:'lightgreen', fontSize:'10px', marginLeft:'10px'}}/>:null} */}
+                                    </p>
+                                    {notif.sender === e.id?<p style={{overflow:'hidden', textOverflow:'ellipsis', width:'70px', height:'30px', margin:'0'}}>{notif.msg}</p>:null}
+                                    </div>
+                                  </div>
+                                   )
+                               }
+                           })
+                       )}
+                    </div>
                     </td>
                 </tr>
             </table>
