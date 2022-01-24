@@ -126,7 +126,7 @@ This link to backend [telegram](https://github.com/aliefabdussalam/backendweek21
 
 ## Screenshot
 
-<!-- Below is a sample screenshot of the telegram APP website and mobile display for users.
+Below is a sample screenshot of the telegram APP website and mobile display for users.
 
 ---------------------------------------------------
 Display Web|Display Web
@@ -139,7 +139,7 @@ Display Mobile|Display Mobile
 :-----------------------:|:----------------------------:
 ![](img/loginmobile.PNG) | ![](img/registermobile.PNG)
 ![](img/listusermobile.PNG) | ![](img/chat%20mobile.PNG)
-![](img/setting%20mobile.PNG) | ![](img/setting%20mobile.PNG) -->
+![](img/setting%20mobile.PNG) | ![](img/setting%20mobile.PNG)
 
 
 
