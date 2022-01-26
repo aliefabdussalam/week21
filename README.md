@@ -48,11 +48,10 @@
 
 ## About The Project
 
-![Product Name Screen Shot](img/prev-chat.png)
 
 Telegram is a web app that users can create their personal account, send for messages. this app built with React.js, Redux. The server side was created with Node.js and Express.js.
 
-This link to backend [telegram](https://github.com/aliefabdussalam)
+This link to backend [telegram](https://github.com/aliefabdussalam/backendweek21)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -127,21 +126,20 @@ This link to backend [telegram](https://github.com/aliefabdussalam)
 
 ## Screenshot
 
-<!-- Below is a sample screenshot of the App Coffee Shop website and mobile display for users.
+Below is a sample screenshot of the telegram APP website and mobile display for users.
 
 ---------------------------------------------------
 Display Web|Display Web
 :-----------------------:|:----------------------------:
-![](img/login.png) | ![](img/reg.png)
-![](img/prev-chat.png) | ![](img/chat.png)
-![](img/profile.png) | ![](img/profile-friend.png)
+![](img/login.PNG) | ![](img/register.PNG)
+![](img/setting.PNG) | ![](img/chat.PNG)
 
 ---------------------------------------------------
 Display Mobile|Display Mobile
 :-----------------------:|:----------------------------:
-![](img/mobile%20(1).png) | ![](img/mobile%20(2).png)
-![](img/mobile%20(3).png) | ![](img/mobile%20(4).png)
-![](img/mobile%20(5).png) | ![](img/mobile%20(6).png) -->
+![](img/loginmobile.PNG) | ![](img/registermobile.PNG)
+![](img/listusermobile.PNG) | ![](img/chat%20mobile.PNG)
+![](img/setting%20mobile.PNG) | ![](img/setting%20mobile.PNG)
 
 
 
