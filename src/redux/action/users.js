@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../helper/env";
 
 export const INSERT = (formdata) => {
     console.log(formdata)
@@ -6,7 +7,7 @@ export const INSERT = (formdata) => {
         const {header} = {
             'Content-Type': 'application/json'
         }
-        axios.post(`http://localhost:8800/register`, formdata, {header})
+        axios.post(`${API_URL}register`, formdata, {header})
         .then((response) => {
             console.log(response.data)
             resolve(response.data)
@@ -19,7 +20,7 @@ export const INSERT = (formdata) => {
 export const LOGIN = (user) => {
     console.log(user)
     return new Promise((resolve, reject) => {
-        axios.post(`http://localhost:8800/login`, user)
+        axios.post(`${API_URL}login`, user)
         .then((response) => { 
             const token = response.data.message
             localStorage.setItem("user", JSON.stringify(response.data.data))
@@ -43,7 +44,7 @@ export const UPDATE_USER = (form) => {
         
       };
       axios
-        .put(`http://localhost:8800/user/${idUser}`, form, { headers })
+        .put(`${API_URL}user/${idUser}`, form, { headers })
         .then((res) => {
           resolve(res.data);
         })
@@ -56,7 +57,7 @@ export const UPDATE_USER = (form) => {
 export const ACTION_GET_ALL_user = () => {
     return (dispatch) => {
         dispatch(alluserPending())
-        axios.get('http://localhost:8800/user').then((response) => {
+        axios.get(`${API_URL}user`).then((response) => {
             
             dispatch(alluserFullfiled(response.data.data))
             
@@ -88,7 +89,7 @@ export const ACTION_GET_DETAILS_USER = (id) => {
     return (dispatch) => {
       dispatch(userDetailsPending());
       axios
-        .get(`http://localhost:8800/user/${id}`)
+        .get(`${API_URL}user/${id}`)
         .then((result) => {
           dispatch(userDetailsFullFilled(result.data.data));
         })

@@ -11,7 +11,7 @@ import { BiSearch } from "@react-icons/all-files/bi/BiSearch";
 import { RiSendPlaneFill } from 'react-icons/ri'
 import { FaAngleLeft } from "react-icons/fa";
 import { AiOutlinePlus } from "@react-icons/all-files/ai/AiOutlinePlus";
-
+import { API_URL } from "../helper/env";
 import "./css/chat.css"
 
 const Chat = () =>{
@@ -199,7 +199,7 @@ const Chat = () =>{
                                                 <div className="d-flex align-items-center flex-column">
                                                 
                                                 <div className="profilePictureUpdate">
-                                                    <img src={form.imgPreview ? form.imgPreview :"http://localhost:8800/"+user[0].image} alt="" />
+                                                    <img src={form.imgPreview ? form.imgPreview :`${API_URL}`+user[0].image} alt="" />
                                                     
                                                     </div>
                                                     <Input
@@ -244,7 +244,7 @@ const Chat = () =>{
                                if(e.username === receiver){
                                    return(
                                        <div className="listuser ms-5 mt-1 d-none d-lg-block">
-                                    <img src={"http://localhost:8800/"+e.image} alt="" srcset="" />
+                                    <img src={`${API_URL}`+e.image} alt="" srcset="" />
                                     <div className="d-flex flex-column">
                                       <p style={{marginBottom:'0px'}} className="usernow">{e.username}</p>
                                     </div>
@@ -278,7 +278,7 @@ const Chat = () =>{
                                if(e.username !== user[0].username){
                                    return(
                                     <div onClick={() => changeReceiver(e.username)} className="listuser" key={i} style={{cursor:'pointer',display:'flex'}}>
-                                    <img src={"http://localhost:8800/"+e.image} alt="" srcset="" />
+                                    <img src={`${API_URL}`+e.image} alt="" srcset="" />
                                     <div className="d-flex flex-column">
                                     <p style={{marginBottom:'5px'}} >{e.username}
                                     {/* {userOn.includes(`${e.id}`)?<FaCircle style={{color:'lightgreen', fontSize:'10px', marginLeft:'10px'}}/>:null} */}
@@ -376,7 +376,7 @@ const Chat = () =>{
                                  <div className="iconLeft mt-3 fs20 ">
                                     <FaAngleLeft clasName="text-danger me-5" onClick={closeChat} />
                                   </div>
-                                    <img src={"http://localhost:8800/"+e.image} alt="" srcset=""/>
+                                    <img src={`${API_URL}`+e.image} alt="" srcset=""/>
                                     <p className="usernowmobile">{e.username}</p>                                    
                                 </div>
                                      
@@ -465,7 +465,7 @@ const Chat = () =>{
                                if(e.username !== user[0].username){
                                    return(
                                     <div onClick={() => changeReceiver(e.username)} className="listuser" key={i} style={{cursor:'pointer',display:'flex'}}>
-                                    <img src={"http://localhost:8800/"+e.image} alt="" srcset="" />
+                                    <img src={`${API_URL}`+e.image} alt="" srcset="" />
                                     <div className="d-flex flex-column">
                                     <p style={{marginBottom:'5px'}} >{e.username}
                                     {/* {userOn.includes(`${e.id}`)?<FaCircle style={{color:'lightgreen', fontSize:'10px', marginLeft:'10px'}}/>:null} */}
