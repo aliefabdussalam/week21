@@ -26,7 +26,6 @@ const Chat = () =>{
     const closeSidebar = () => setSidebarOpen(false)
     const [listmsg, setlistmsg] = useState([])
     const [listmsghistory, setlistmsghistory] = useState([])
-    const [notif, setNotif]= useState({})
     const userlogin = useSelector((state) => state.user.details[0]);
     const [receiver, setReceiver] = useState('')
     const [msg, setmessage] = useState('') 
@@ -69,7 +68,7 @@ const Chat = () =>{
     let fileName = document.getElementById("image").value;
     const idxDot = fileName.lastIndexOf(".") + 1;
     const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if(extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+    if(extFile==="jpg" || extFile==="jpeg" || extFile==="png"){
       setForm({
         ...form,
         image: event.target.files[0],
@@ -283,7 +282,6 @@ const Chat = () =>{
                                     <p style={{marginBottom:'5px'}} >{e.username}
                                     {/* {userOn.includes(`${e.id}`)?<FaCircle style={{color:'lightgreen', fontSize:'10px', marginLeft:'10px'}}/>:null} */}
                                     </p>
-                                    {notif.sender === e.id?<p style={{overflow:'hidden', textOverflow:'ellipsis', width:'70px', height:'30px', margin:'0'}}>{notif.msg}</p>:null}
                                     </div>
                                   </div>
                                    )
@@ -470,7 +468,6 @@ const Chat = () =>{
                                     <p style={{marginBottom:'5px'}} >{e.username}
                                     {/* {userOn.includes(`${e.id}`)?<FaCircle style={{color:'lightgreen', fontSize:'10px', marginLeft:'10px'}}/>:null} */}
                                     </p>
-                                    {notif.sender === e.id?<p style={{overflow:'hidden', textOverflow:'ellipsis', width:'70px', height:'30px', margin:'0'}}>{notif.msg}</p>:null}
                                     </div>
                                   </div>
                                    )
