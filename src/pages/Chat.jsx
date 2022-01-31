@@ -158,8 +158,8 @@ const Chat = () =>{
     ):(
         <div class="container-fluid home">
             <div class="d-flex navbarchat col-12 ">
-                <div><p class="telegram col-4 mt-2 me-5 "> Telegram </p></div>
-                <Dropdown isOpen={dropdownOpen} toggle={toggleDrop} className="ms-lg-5">
+                <div><p class="telegram col-4 mt-2 me-5 ms-sm-0"> Telegram </p></div>
+                <Dropdown isOpen={dropdownOpen} toggle={toggleDrop} className="ms-5">
                 <DropdownToggle style={{backgroundColor:'transparent', padding:'0', border:'none'}}>
                   <HiMenuAlt1 style={{width:'30px', height:'40px', color:'#7E98DF'}}/>
                 </DropdownToggle>
@@ -257,9 +257,9 @@ const Chat = () =>{
              
             </div>
             
-            <table >
-                <tr className="d-none d-sm-block">
-                    <td style={{width: '25%'}} className="list">
+            <div className="row">
+                <div className="row mainchat">
+                    <div className="list col-lg-3 m-0">
                     <div className="searchbox" style={{display:'flex', width:'100%'}}>
                         <div className="box" style={{display:'flex', width:'80%'}}>
                             <BiSearch className="src"/>
@@ -289,9 +289,9 @@ const Chat = () =>{
                            })
                        )}
                     </div>
-                    </td>
+                    </div>
                    
-                    <td style={{width: "75%", backgroundColor:" #f0efef"}}> 
+                    <div className="col-lg-9 m-0" style={{ backgroundColor:" #f0efef"}}> 
                         <div style={{height: "80vh", }}>
                         <div className="chatbox ">
                             {
@@ -360,11 +360,11 @@ const Chat = () =>{
                             </div>
                         </div>
                     
-                    </td>
-                </tr>
-                <tr>
-                <td style={{width: "75%", backgroundColor:" #f0efef"}} className={chatOpen === true ? "d-lg-none" : "d-none"}> 
-                      <div style={{height: "60vh", }}>
+                    </div>
+                </div>
+                <div>
+                <div style={{padding:"0px", backgroundColor:" #f0efef"}} className={chatOpen === true ? "d-lg-none" : "d-none"}> 
+                      <div style={{height: "80vh", }}>
                       <div>
                       {(
                            listUser.map((e, i) =>{ 
@@ -450,8 +450,8 @@ const Chat = () =>{
                           </div>
                       </div>
                   
-                  </td>
-                  <td style={{width: '25%'}} class="list" className={chatOpen === false ? "d-lg-none " : "d-none"}>
+                  </div>
+                  <div  class="list" className={chatOpen === false ? "d-lg-none " : "d-none"}>
                     
                     <div>
                        {listUser.length <= 0 ? (
@@ -475,9 +475,9 @@ const Chat = () =>{
                            })
                        )}
                     </div>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            </div>
             <div></div>
         </div>
          )}

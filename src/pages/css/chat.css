@@ -63,6 +63,10 @@ table{
 .nullmsg{
     text-align: center;
 }
+.mainchat{
+  display: flex !important;
+  flex-direction: row;
+}
 .listuser{
     margin-top: 20px;
 }
@@ -252,4 +256,9 @@ table{
     color: #7E98DF;
     cursor: pointer;
     /* padding-left: 20px; */
+}
+@media screen and (max-width: 576px){
+  .mainchat{
+    display: none !important;
+  }
 }
